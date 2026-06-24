@@ -3,10 +3,15 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <atomic>
+#include <thread>
+#include <chrono>
 #include <random>
 #include <vector>
 #include <cstdlib>
 using namespace std;
+
+atomic<bool> timeOut(false);
 
 void cleanScreen() {
     system("clear");
@@ -19,21 +24,32 @@ void cleanBuffer() {
     }
 }
 
+void timerQuiz(int seconds) {
+    for(int i = 0; i < seconds; i++){
+        if (timeOut) return; //Encerra se o usuário terminar antes do tempo acabar
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+    timeOut = true;
+    cout << "\n\t === ⏰ Tempo Esgotado! ===\n";
+    cout << "\t(Digite qualquer tecla para ver sua Pontuação)";
+}
+
 void printLogo() {
     cout << R"(
 ================================================================================
 __________                   __               __    ________        .__        
 \______   \_______  ____    |__| ____   _____/  |_  \_____  \  __ __|__|_______
-|     ___/\_  __ \/  _ \   |  |/ __ \_/ ___\   __\  /  / \  \|  |  \  \___   /
-|    |     |  | \(  <_> )  |  \  ___/\  \___|  |   /   \_/.  \  |  /  |/    / 
-|____|     |__|   \____/\__|  |\___  >\___  >__|   \_____\ \_/____/|__/_____ \
-                         \______|    \/     \/              \__>              \/
+ |     ___/\_  __ \/  _ \   |  |/ __ \_/ ___\   __\  /  / \  \|  |  \  \___   /
+ |    |     |  | \(  <_> )  |  \  ___/\  \___|  |   /   \_/.  \  |  /  |/    / 
+ |____|     |__|   \____/\__|  |\___  >\___  >__|   \_____\ \_/____/|__/_____ \
+                       \______|    \/     \/              \__>              \/
 ================================================================================
 )";
 }
 
 void printScore() {
-    cout << R"( _________                           
+    cout << R"(
+  _________                           
  /   _____/ ____  ___________   ____  
  \_____  \_/ ___\/  _ \_  __ \_/ __ \ 
  /        \  \__(  <_> )  | \/\  ___/ 
@@ -43,6 +59,16 @@ void printScore() {
 ============ Top 10 Sábios ============
 )";
     cout << "Nome\t\t\t\t Pontos\n\n";
+}
+
+void printStart() {
+    cout << R"(
+  _________ __                 __   
+ /   _____//  |______ ________/  |_ 
+ \_____  \\   __\__  \\_  __ \   __\
+ /        \|  |  / __ \|  | \/|  |  
+/_______  /|__| (____  /__|   |__|  
+        \/           \/             )";
 }
 
 void showInfo() {
@@ -181,7 +207,9 @@ vector<Quest> loadQuest(const string& archive) {
 }
 
 void start() {
+    timeOut = false;
     cleanScreen();
+    printStart();
     showInfo();
     int response;
     int score = 0;
@@ -193,7 +221,7 @@ void start() {
         cleanScreen();
 
         //Carregar as perguntas em um vetor de Structs
-        vector<Quest> quizQuest = loadQuest("../data/questions/questions.bin");
+        vector<Quest> quizQuest = loadQuest("../data/questions/questions.txt");
         if(quizQuest.empty()) { //Caso de falha ao carregar o vetor
             cout << "Falha ao carregar as perguntas.\n";
             return;
@@ -201,8 +229,12 @@ void start() {
         mt19937 rng(random_device{}());
         shuffle(quizQuest.begin(), quizQuest.end(), rng); //Embaralha o vetor de forma aleatória, sem risco de tirar uma questão repitida
 
+        //Cria a Thread e execulta o timer em paralelo
+        thread t(timerQuiz, 90);
+
         //Loop de Exibição das Perguntas e Alternativas
-        for(int i = 0; i < 15; i++) { 
+        for(int i = 0; i < 30; i++) { 
+            if (timeOut) break; //Verifica se o tempo acabou
             cleanScreen();
             cout << "Pontuação Atual: " << score << '\n';
             cout << "================================================================\n";
@@ -223,11 +255,13 @@ void start() {
                 score += 10;
             }
             else score -= 5;
+            if (timeOut) break;
         }
+        t.detach(); //Finaliza o timer se o usuário responder todas a perguntas antes do tempo acabar
         cleanScreen();
 
         cout << "\t\t=== Quiz Finalizado ===\n";
-        if (score >= 140) easterEgg();
+        if (score >= 290) easterEgg();
         cout << "Pontuação Final: " << score << '\n';
         cout << "Digite seu nome (Até 3 Letras): ";
 
@@ -242,9 +276,13 @@ void start() {
         player.name = name;
         player.points = score;
         saveScore(player);
+        cleanScreen();
 
+        timerQuiz(3); //Mostrar mensagem de pontuação salva por 3 seg
         cout << "Pontuação Salva\n";
+        t.join();
 
+        cleanScreen();
     }
     else {
         cout << "Opção Inválida!\n";

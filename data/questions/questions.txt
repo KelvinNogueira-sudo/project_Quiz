@@ -1,0 +1,30 @@
+Quem descobriu o brasil foi Pedro Álvares...;Cabral;Cabrel;Cabril;Cabrou;1
+Qual o formato da Terra?;Redonda;Quadrada;Geoíde;Plana;3
+Qual animal representa o símbolo da paz?;Galinha Pintadinha;Pomba Branca;Mamaco Prego;Capivara;2
+O que significa EPI?;Equipamento Proteção Individual;Equipe de Patrulha Ilegal;Empadas Primitivas Incríveis;Espadas Polídas Incas;1
+Em que ano ocorreu a Revolução Francesa?;1789;1865;1945;2001;1
+Quem foi o primeiro homem a pisar na Lua?;Buzz Aldrin;Laica the Dog;Louis Armstrong;Neil Armstrong;4
+Qual é a cor da caixa-preta de um avião?;Preta;Branca;Laranja;Rosa;3
+Qual é o país que tem mais ilhas no mundo?;França;Suécia;Espanha;Inglaterra;2
+Quem escreveu "Dom Quixote"?;William Shakespeare;Miguel de Cervantes;Gabriel García Márquez;Fiódor Dostoiévski;2
+O elemento químico representado pelo símbolo 'O' é o...?;Ouro;Osmium;Oxigênio;Organessônio;3
+Qual o animal presente no Logotipo da Ferrari?;Cobra;Porco;Leão;Cavalo;4
+Qual desses pratos é originário do Japão?;Pizza;Cuscuz;Sushi;Hambúger;3
+O planeta mais quente do Sistema Solar é...;Mercúrio;Vênus;Terra;Marte;2
+Quem pintou a Capela Sistina?;Michelangelo;Rafael;Leonardo DaVinci;Donatelo;1
+Qual a Capital da Túrquia?;Istambul;Jerusalém;Ancara;Constantinopla;3
+Se um anel tem 3 pedras preciosas, 11 anéis tem...;10;31;40;33;4
+Qual o nome popular para o Cloreto de Sódio?;Vinagre;Água Sanitária;Sal;Fermento;3
+O que feriado é comemorado no dia 21 de Abril no Brasil?;Independência do Brasil;Tiradentes;Proclamação da República;Finados;2
+Qual o plural de chapéu?;Chapéus;Chapéis;Chapéuzes;Os chapéu;1
+Em que país fica o Taj Mahal?;China;Síria;Índia;Tailandia;3
+Qual a primeira mulher a ganhar o Prémio Nobel?;Marie Curie;Valentina Tereshkova;Elizabeth Blackweel;Irène Joliot-Curie;1
+Em média, quantos litros de sangue tem um Ser Humano?;3L;6L;5L;10L;2
+De qual país surgiu o chuveiro elétrico?;Brasil;França;EUA;Austrália;1
+Depois da Bíblia, qual o livro mais vendido no mundo?;Senhor dos Anéis;O Pequeno Príncipe;Harry Poter;Dom Quixote;4
+Qual o jogo mais vendido no mundo(Sem agregar suas múltiplas versões)?;Tetris;Pacman;Minecraft;GTA V;3
+Quem pintou o quadro "Guernica"?;Pablo Picasso;Salvador Dali;Paul Cézzane;Diego Rivera;1
+Qual a velocidade da luz?;300.000.000 m/s;299.792.458 m/s;30.000.000 km/s;500.000.000 m/s;2
+Qual o nome do artísta brasileiro Aleijadinho?;Antônio Francisco Lisboa;Manuel Francisco Lisboa;Francisco Antônio Lisboa;Alexandrino Francisco Lisboa;1
+Quais os nomes dos Três Reis Magos?;Gaspar, Nicolau e Natanael;Melchior, Noé e Galileu;Belchior, Gaspar e Baltazar;Gandalf,Mestre dos Magos e Dumbledore;3
+Qual o estilo de luta é usado pelo personagem Zangiff de Street Fighter?;Capoeira;Sambo;Muay Thai;Karatê;2
