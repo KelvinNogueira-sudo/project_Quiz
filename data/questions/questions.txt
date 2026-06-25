@@ -27,4 +27,4 @@ Quem pintou o quadro "Guernica"?;Pablo Picasso;Salvador Dali;Paul Cézzane;Diego
 Qual a velocidade da luz?;300.000.000 m/s;299.792.458 m/s;30.000.000 km/s;500.000.000 m/s;2
 Qual o nome do artísta brasileiro Aleijadinho?;Antônio Francisco Lisboa;Manuel Francisco Lisboa;Francisco Antônio Lisboa;Alexandrino Francisco Lisboa;1
 Quais os nomes dos Três Reis Magos?;Gaspar, Nicolau e Natanael;Melchior, Noé e Galileu;Belchior, Gaspar e Baltazar;Gandalf, Mestre dos Magos e Dumbledore;3
-Qual o estilo de luta é usado pelo personagem Zangiff de Street Fighter?;Capoeira;Sambo;Muay Thai;Karatê;2
+Qual o estilo de luta é usado pelo personagem Zangief de Street Fighter?;Capoeira;Sambo;Muay Thai;Karatê;2
