@@ -13,7 +13,7 @@ Qual desses pratos é originário do Japão?;Pizza;Cuscuz;Sushi;Hambúger;3
 O planeta mais quente do Sistema Solar é...;Mercúrio;Vênus;Terra;Marte;2
 Quem pintou a Capela Sistina?;Michelangelo;Rafael;Leonardo DaVinci;Donatelo;1
 Qual a Capital da Túrquia?;Istambul;Jerusalém;Ancara;Constantinopla;3
-Se um anel tem 3 pedras preciosas, 11 anéis tem...;10;31;40;33;4
+Se um anel tem 3 pedras preciosas, 11 anéis tem...;10 anéis;31 anéis;40 anéis;33 anéis;4
 Qual o nome popular para o Cloreto de Sódio?;Vinagre;Água Sanitária;Sal;Fermento;3
 O que feriado é comemorado no dia 21 de Abril no Brasil?;Independência do Brasil;Tiradentes;Proclamação da República;Finados;2
 Qual o plural de chapéu?;Chapéus;Chapéis;Chapéuzes;Os chapéu;1
@@ -26,5 +26,5 @@ Qual o jogo mais vendido no mundo(Sem agregar suas múltiplas versões)?;Tetris;
 Quem pintou o quadro "Guernica"?;Pablo Picasso;Salvador Dali;Paul Cézzane;Diego Rivera;1
 Qual a velocidade da luz?;300.000.000 m/s;299.792.458 m/s;30.000.000 km/s;500.000.000 m/s;2
 Qual o nome do artísta brasileiro Aleijadinho?;Antônio Francisco Lisboa;Manuel Francisco Lisboa;Francisco Antônio Lisboa;Alexandrino Francisco Lisboa;1
-Quais os nomes dos Três Reis Magos?;Gaspar, Nicolau e Natanael;Melchior, Noé e Galileu;Belchior, Gaspar e Baltazar;Gandalf,Mestre dos Magos e Dumbledore;3
+Quais os nomes dos Três Reis Magos?;Gaspar, Nicolau e Natanael;Melchior, Noé e Galileu;Belchior, Gaspar e Baltazar;Gandalf, Mestre dos Magos e Dumbledore;3
 Qual o estilo de luta é usado pelo personagem Zangiff de Street Fighter?;Capoeira;Sambo;Muay Thai;Karatê;2

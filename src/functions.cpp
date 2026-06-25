@@ -9,6 +9,7 @@
 #include <random>
 #include <vector>
 #include <cstdlib>
+#include <SFML/Audio.hpp>
 using namespace std;
 
 atomic<bool> timeOut(false);
@@ -31,7 +32,7 @@ void timerQuiz(int seconds) {
     }
     timeOut = true;
     cout << "\n\t === ⏰ Tempo Esgotado! ===\n";
-    cout << "\t(Digite qualquer tecla para ver sua Pontuação)";
+    cout << "(Digite qualquer tecla para ver sua Pontuação)";
 }
 
 void printLogo() {
@@ -56,7 +57,7 @@ void printScore() {
 /_______  /\___  >____/|__|    \___  >
         \/     \/                  \/ 
 
-============ Top 10 Sábios ============
+============ Pontuação Geral ============
 )";
     cout << "Nome\t\t\t\t Pontos\n\n";
 }
@@ -75,11 +76,15 @@ void showInfo() {
     cout << R"(
  ______________________________________________________________________________
 / Informações sobre o Quiz:                                                     \
-| - Serão 15 perguntas aleatórias para responder, cada uma com 4 alternativas;  |
+|                                                                               |
+| - Você terá 2:00 min para responder ao máximo de perguntas possíveis (30 no   |
+| total) corretamente;                                                          |
 | - Para cada resposta correta, será acrescentado +10 pontos na sua pontuação;  |
 | - Para cada resposta errada, será subitraído -5 pontos na sua pontuação;      |
-| - Você terá apenas 10 segundos para responder cada pergunta (em caso de time- |
-| out, a pergunta será pulada para a próxima e não pontuará);                   |
+| - Em caso de resposta não correspondente (exemplo: 33, a, 7) a pergunta será  |
+| pulada e você perderá 5 pontos (então preste atençao na sua resposta);        |
+| - Em caso de Time Out (Tempo Acabar), o quiz será encerrado, e você poderá    |
+| registrar sua pontuação.                                                      |
 |                                                                               |
 \ - Boa Sorte (⌐■_■);                                                           /
  -------------------------------------------------------------------------------
@@ -88,7 +93,7 @@ void showInfo() {
 
 void easterEgg() {
     cout << R"(
-*PARABÉNS, VOCÊ PONTOU O SUFICIENTE PARA DESCOBRIR O EASTER EGG!*
+    *PARABÉNS, VOCÊ PONTOU O SUFICIENTE PARA ACHAR O DOGUINHO!*
             ⬜⬜⬛⬜⬛⬛⬛⬛⬜⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
             ⬜⬛⬜⬛⬜⬜⬜⬜⬛⬜⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜
             ⬜⬛⬜⬜⬜⬜⬜⬜⬜⬜⬛⬜⬜⬜⬜⬜⬜⬜⬜⬜
@@ -108,8 +113,21 @@ void easterEgg() {
             ⬜⬛⬜⬛⬜⬛⬜⬜⬛⬜⬜⬛⬜⬜⬛⬛⬜⬛⬜⬜
             ⬜⬜⬛⬜⬜⬛⬜⬛⬜⬜⬜⬛⬜⬛⬜⬜⬛⬜⬜⬜
             ⬜⬜⬜⬜⬜⬜⬛⬜⬜⬜⬜⬜⬛⬜⬜⬜⬜⬜⬜⬜
-=================================================================
+  ===============================================================
 )";
+
+    sf::SoundBuffer buffer;
+    if (!buffer.loadFromFile("../data/audio/annoying_dog.WAV")) {
+        cerr << "Erro: não foi possível carregar o áudio!\n";
+        return;
+    }
+
+    sf::Sound sound(buffer);
+    sound.play();
+
+    while(sound.getStatus() == sf::Sound::Status::Playing) {
+            sf::sleep(sf::seconds(1));
+    }
 }
 
 void saveScore(Score p) {
@@ -230,7 +248,7 @@ void start() {
         shuffle(quizQuest.begin(), quizQuest.end(), rng); //Embaralha o vetor de forma aleatória, sem risco de tirar uma questão repitida
 
         //Cria a Thread e execulta o timer em paralelo
-        thread t(timerQuiz, 90);
+        thread t(timerQuiz, 120);
 
         //Loop de Exibição das Perguntas e Alternativas
         for(int i = 0; i < 30; i++) { 
@@ -255,13 +273,16 @@ void start() {
                 score += 10;
             }
             else score -= 5;
-            if (timeOut) break;
+
+            if(score < 0) score = 0; //Evitar que a pontuação fique negativa
+            if (timeOut) break; //Se o tempo acabar, encerra
         }
-        t.detach(); //Finaliza o timer se o usuário responder todas a perguntas antes do tempo acabar
+        timeOut = true;
+        t.join();
         cleanScreen();
 
         cout << "\t\t=== Quiz Finalizado ===\n";
-        if (score >= 290) easterEgg();
+        if (score >= 280) easterEgg();
         cout << "Pontuação Final: " << score << '\n';
         cout << "Digite seu nome (Até 3 Letras): ";
 
@@ -278,13 +299,13 @@ void start() {
         saveScore(player);
         cleanScreen();
 
-        timerQuiz(3); //Mostrar mensagem de pontuação salva por 3 seg
-        cout << "Pontuação Salva\n";
-        t.join();
-
+        cout << "\t=== Pontuação Salva ===\n";
+        this_thread::sleep_for(chrono::seconds(2));
         cleanScreen();
     }
     else {
-        cout << "Opção Inválida!\n";
+        cleanScreen();
+        cout << "=== Opção Inválida! ===\n";
+        start();
     }
 }
