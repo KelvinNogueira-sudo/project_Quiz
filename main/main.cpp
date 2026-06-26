@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int x;
+    char x;
     while(true){
         printLogo();
         cout << "- Escolha uma opção: \n\n";
@@ -11,15 +11,15 @@ int main() {
 
         cin >> x;
         switch(x){
-            case 1: {
+            case '1': {
                 start();
                 break;
             }
-            case 2: {
-                loadScore("../data/score/score.bin");
+            case '2': {
+                loadScore("data/score/score.bin");
                 break;
             }
-            case 3: {
+            case '3': {
                 cleanScreen();
                 return 0;
             }

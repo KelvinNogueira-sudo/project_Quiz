@@ -117,7 +117,7 @@ void easterEgg() {
 )";
 
     sf::SoundBuffer buffer;
-    if (!buffer.loadFromFile("../data/audio/annoying_dog.WAV")) {
+    if (!buffer.loadFromFile("data/audio/annoying_dog.WAV")) {
         cerr << "Erro: não foi possível carregar o áudio!\n";
         return;
     }
@@ -137,7 +137,7 @@ void saveScore(Score p) {
 
     try{
     //Salvar no Arquivo
-    ofstream out ("../data/score/score.bin", ios::binary | ios::app);
+    ofstream out ("data/score/score.bin", ios::binary | ios::app);
     out.write(reinterpret_cast<const char*>(&len), sizeof(len));
     out.write(p.name.c_str(), len);
     out.write(reinterpret_cast<const char*>(&p.points), sizeof(p.points));
@@ -239,7 +239,7 @@ void start() {
         cleanScreen();
 
         //Carregar as perguntas em um vetor de Structs
-        vector<Quest> quizQuest = loadQuest("../data/questions/questions.txt");
+        vector<Quest> quizQuest = loadQuest("data/questions/questions.txt");
         if(quizQuest.empty()) { //Caso de falha ao carregar o vetor
             cout << "Falha ao carregar as perguntas.\n";
             return;

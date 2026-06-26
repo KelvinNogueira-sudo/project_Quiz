@@ -13,7 +13,7 @@ Qual desses pratos é originário do Japão?;Pizza;Cuscuz;Sushi;Hambúger;3
 O planeta mais quente do Sistema Solar é...;Mercúrio;Vênus;Terra;Marte;2
 Quem pintou a Capela Sistina?;Michelangelo;Rafael;Leonardo DaVinci;Donatelo;1
 Qual a Capital da Túrquia?;Istambul;Jerusalém;Ancara;Constantinopla;3
-Se um anel tem 3 pedras preciosas, 11 anéis tem...;10 anéis;31 anéis;40 anéis;33 anéis;4
+Se um anel tem 3 pedras preciosas, 11 anéis tem...;10 pedras;31 pedras;40 pedras;33 pedras;4
 Qual o nome popular para o Cloreto de Sódio?;Vinagre;Água Sanitária;Sal;Fermento;3
 O que feriado é comemorado no dia 21 de Abril no Brasil?;Independência do Brasil;Tiradentes;Proclamação da República;Finados;2
 Qual o plural de chapéu?;Chapéus;Chapéis;Chapéuzes;Os chapéu;1
