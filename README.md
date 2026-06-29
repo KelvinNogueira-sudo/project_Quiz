@@ -13,4 +13,4 @@ O projeto é basicamente um Jogo de Quiz em que o usuário deve responder ao má
  - Manipulção de Arquivos.
 <p>
   Para uma explicação detalhada dos códigos do Projeto, você pode checar no link do Google Colab abaixo: <p>
-  (Ainda irei adicionar :P )
+  [Project Quiz - Google Colab](https://colab.research.google.com/drive/1JkGwTzQsAC06G1d1Z9w8_RFa0W9lshFx?usp=sharing)
