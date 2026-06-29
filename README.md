@@ -16,4 +16,4 @@ E trabalha com conceitos estudados em Sala de Aula, como:
 
 Para uma explicação detalhada dos códigos do Projeto, você pode checar no link do Google Colab abaixo:
 
-[Project Quiz - Google Colab](https://colab.research.google.com/drive/1JkGwTzQsAC06G1d1Z9w8_RFa0W9lshFx?usp=sharing)
+[Project Quiz - Google Colab](https://colab.research.google.com/drive/1kUzbpOH0N920N-GHt6p6dGSH6CYuUW1p?usp=sharing)
