@@ -23,7 +23,10 @@ int main() {
                 cleanScreen();
                 return 0;
             }
-            default: cout << "\n---Opção Inválida!---\n\n";
+            default: {
+                cleanScreen();
+                cout << "\n---Opção Inválida!---\n\n";
+            }
         }
     }
 }

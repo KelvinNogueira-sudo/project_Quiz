@@ -131,8 +131,6 @@ void easterEgg() {
 }
 
 void saveScore(Score p) {
-    vector<Score> save;
-    save.push_back(p);
     size_t len = p.name.size();
 
     try{
@@ -229,6 +227,7 @@ void start() {
     cleanScreen();
     printStart();
     showInfo();
+
     int response;
     int score = 0;
     char next;
@@ -244,11 +243,12 @@ void start() {
             cout << "Falha ao carregar as perguntas.\n";
             return;
         }
+
         mt19937 rng(random_device{}());
         shuffle(quizQuest.begin(), quizQuest.end(), rng); //Embaralha o vetor de forma aleatória, sem risco de tirar uma questão repitida
 
         //Cria a Thread e execulta o timer em paralelo
-        thread t(timerQuiz, 120);
+        thread t(timerQuiz, 120); //120 segundos = 2:00 minutos
 
         //Loop de Exibição das Perguntas e Alternativas
         for(int i = 0; i < 30; i++) { 
@@ -291,7 +291,7 @@ void start() {
         Score player;
 
         cin >> name;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpar o '\n' restante
+        cleanBuffer();
             if (name.size() >= 3) name.erase(3); //Se o nome digitado pelo usuário for maior que 3 caractéres, apaga de 3° em diante
 
         player.name = name;

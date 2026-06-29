@@ -1,16 +1,19 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-using namespace std;
 
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <atomic>
 #include <thread>
 #include <chrono>
 #include <random>
 #include <vector>
 #include <cstdlib>
+#include <SFML/Audio.hpp>
+
+using namespace std;
 
 struct Quest {
     string text;
